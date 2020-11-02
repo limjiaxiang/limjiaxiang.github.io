@@ -63,7 +63,7 @@ a {
 }
 
 .parallax-window {
-  min-height: 46%;
+  min-height: 50%;
   background: transparent;
   position: relative;
 }
@@ -306,6 +306,8 @@ a {
 .tm-gallery-item {
   padding-left: 10px;
   padding-right: 10px;
+  min-width: 240px;
+  min-height 360px;
   outline: none;
 }
 
