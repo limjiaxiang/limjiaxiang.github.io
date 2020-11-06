@@ -152,7 +152,7 @@ body {
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox ? */
   -ms-overflow-style: none; /* IE, Edge */
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 body::-webkit-scrollbar {
@@ -160,7 +160,7 @@ body::-webkit-scrollbar {
 }
 
 .horizontal-wrapper {
-  position: relative;
+  position: relative !important;
 }
 
 .tm-sidebar-sticky {
