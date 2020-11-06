@@ -148,6 +148,11 @@ a {
   height: 0;
 }
 
+mobile-scroll {
+  overflow-x: hidden;
+  position: relative;
+}
+
 .tm-sidebar-sticky {
   display: flex;
   flex-direction: column;
