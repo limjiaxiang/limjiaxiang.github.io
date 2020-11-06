@@ -148,9 +148,14 @@ a {
   height: 0;
 }
 
-mobile-scroll {
-  overflow-x: hidden;
-  position: relative;
+body{
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox ? */
+  -ms-overflow-style: none; /* IE, Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Opera, Safari */
 }
 
 .tm-sidebar-sticky {
