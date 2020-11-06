@@ -149,10 +149,11 @@ a {
 }
 
 body {
+  overflow-x: hidden;
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox ? */
   -ms-overflow-style: none; /* IE, Edge */
-  overflow-x: hidden !important;
+  width: 100%;
 }
 
 body::-webkit-scrollbar {
@@ -160,7 +161,7 @@ body::-webkit-scrollbar {
 }
 
 .horizontal-wrapper {
-  position: relative !important;
+  position: relative;
 }
 
 .tm-sidebar-sticky {
