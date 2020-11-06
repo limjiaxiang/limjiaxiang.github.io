@@ -63,7 +63,7 @@ a {
 }
 
 .parallax-window {
-  min-height: 50%;
+  min-height: 47%;
   background: transparent;
   position: relative;
 }
@@ -74,6 +74,13 @@ a {
   height: auto;
   max-width: 1575px;
   padding: 60px 60px;
+}
+
+.no-bullets-center {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 #intro {
