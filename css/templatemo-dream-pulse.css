@@ -76,11 +76,10 @@ a {
   padding: 60px 60px;
 }
 
-.no-bullets-center {
-  list-style-type: none;
+.greek-bullets {
+  list-style-type: lower-greek;
   padding: 0;
   margin: 0;
-  text-align: center;
 }
 
 #intro {
@@ -162,7 +161,7 @@ a {
   margin-right: 0;
   display: flex;
   justify-content: center;
-  min-height: 46%;
+  min-height: 35%;
 }
 
 .tm-main-nav > li > a {
