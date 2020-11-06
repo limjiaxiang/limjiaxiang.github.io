@@ -149,7 +149,7 @@ a {
 }
 
 body {
-  overflow-y: scroll;
+  overflow: scroll;
   scrollbar-width: none; /* Firefox ? */
   -ms-overflow-style: none; /* IE, Edge */
 }
@@ -159,7 +159,6 @@ body::-webkit-scrollbar {
 }
 
 .horizontal-wrapper {
-  overflow: hidden;
   position: relative;
 }
 
