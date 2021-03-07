@@ -63,9 +63,10 @@ a {
 }
 
 .parallax-window {
-  min-height: 47%;
+  height: 100vh;
   background: transparent;
   position: relative;
+  /* min-height: 47%; */
 }
 
 .tm-section {
@@ -175,7 +176,8 @@ body::-webkit-scrollbar {
   margin-right: 0;
   display: flex;
   justify-content: center;
-  min-height: 35%;
+  height: 100vh;
+  /* min-height: 35%; */
 }
 
 .tm-main-nav > li > a {
