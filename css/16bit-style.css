@@ -16,12 +16,13 @@
 body {
   background-color: #E6F3FF;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
-    url('img/lake-hula-ghibli.jpg');
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url('../img/lake-hula-ghibli.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  min-height: 100vh;
   color: var(--text-color);
   font-family: 'Press Start 2P', cursive;
   line-height: 1.6;
