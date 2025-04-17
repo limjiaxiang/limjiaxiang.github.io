@@ -1,0 +1,425 @@
+/* 16-bit Retro City Pop Style CSS */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --primary-color: #FF8FB1;    /* Soft pink */
+  --secondary-color: #87CEEB;  /* Sky blue */
+  --accent-color: #FFD700;     /* Gold */
+  --background-color: rgba(255, 255, 255, 0.95); /* Nearly white with transparency */
+  --text-color: #4A4A4A;       /* Soft dark gray */
+  --text-secondary: #6B7280;   /* Medium gray */
+  --border-color: #87CEEB;     /* Sky blue */
+  --section-bg: rgba(255, 255, 255, 0.85);
+  --city-pop-gradient: linear-gradient(45deg, #FF8FB1, #87CEEB);
+}
+
+body {
+  background-color: #E6F3FF;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+    url('img/lake-hula-ghibli.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text-color);
+  font-family: 'Press Start 2P', cursive;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Retro container */
+.container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Retro navigation */
+.tm-sidebar {
+  background-color: rgba(240, 248, 255, 0.9);
+  border-right: 4px solid var(--border-color);
+  padding: 20px;
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+.tm-brand {
+  color: var(--primary-color);
+  font-size: 24px;
+  text-shadow: 2px 2px var(--secondary-color), 0 0 10px var(--primary-color);
+  letter-spacing: 2px;
+}
+
+.tm-main-nav .nav-link {
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  margin: 10px 0;
+  padding: 10px;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px var(--text-color);
+}
+
+.tm-main-nav .nav-link:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  box-shadow: 0 0 15px var(--primary-color);
+  transform: translateX(5px);
+}
+
+/* Retro sections */
+.tm-section {
+  border: 3px solid var(--border-color);
+  margin: 20px 0;
+  padding: 20px;
+  position: relative;
+  background-color: var(--section-bg);
+  box-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
+  border-radius: 8px;
+}
+
+.tm-section::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  background: var(--city-pop-gradient);
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 8px;
+}
+
+.tm-section-title {
+  color: var(--text-color);
+  text-shadow: 2px 2px var(--secondary-color), 0 0 10px var(--accent-color);
+  letter-spacing: 1px;
+}
+
+/* Retro gallery */
+.tm-gallery-item {
+  border: 2px solid var(--border-color);
+  margin: 10px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  background-color: rgba(240, 248, 255, 0.7);
+}
+
+.tm-gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(76, 212, 255, 0.3);
+}
+
+.tm-gallery-item figcaption {
+  color: var(--text-color);
+  text-shadow: 0 0 5px var(--text-color);
+}
+
+/* Retro buttons */
+button {
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px var(--text-color);
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* Retro social links */
+.tm-social-links .nav-link {
+  background: var(--background-color);
+  color: var(--text-color);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px 20px;
+  margin: 8px;
+  transition: all 0.3s ease;
+}
+
+.tm-social-links .nav-link:hover {
+  background: var(--secondary-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(135, 206, 235, 0.3);
+}
+
+/* Retro animations */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes neon-pulse {
+  0% { text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color); }
+  50% { text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color); }
+  100% { text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color); }
+}
+
+.neon-pulse {
+  animation: neon-pulse 2s infinite;
+}
+
+/* City pop elements */
+.city-pop-header {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  margin-bottom: 30px;
+}
+
+.city-pop-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(240,248,255,0.8) 0%, rgba(240,248,255,0) 100%);
+  z-index: 1;
+}
+
+.city-pop-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9) contrast(1.2) saturate(1.5);
+}
+
+.city-pop-header h2 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+  color: var(--accent-color);
+  text-shadow: 2px 2px var(--primary-color), 0 0 10px var(--accent-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tm-brand {
+    font-size: 18px;
+  }
+  
+  .tm-section {
+    padding: 10px;
+  }
+}
+
+/* Carousel styles */
+.carousel-container {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  gap: 30px;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.carousel-slide {
+  flex: 0 0 auto;
+  width: 200px;
+  scroll-snap-align: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background: var(--background-color);
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  margin: 5px;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  padding: 10px;
+  background: var(--background-color);
+  box-shadow: 0 4px 15px rgba(135, 206, 235, 0.2);
+  margin: 0;
+}
+
+.carousel-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(135, 206, 235, 0.3);
+}
+
+.carousel-slide:hover img {
+  box-shadow: 0 8px 20px rgba(135, 206, 235, 0.3);
+}
+
+.carousel-caption {
+  color: var(--text-color);
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: 15px;
+  width: 100%;
+  padding: 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+/* Hide scrollbar but keep functionality */
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Career link styles */
+.career-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.career-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.career-link > * {
+  pointer-events: none;
+}
+
+/* Education section */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.education-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--background-color);
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(135, 206, 235, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(135, 206, 235, 0.3);
+}
+
+.education-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  padding: 12px;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease;
+}
+
+/* Specific size for NP logo */
+.education-item img[alt="Ngee Ann Polytechnic"] {
+  width: 180px;  /* 150px + 20% */
+  height: 180px; /* 150px + 20% */
+}
+
+.education-item img:hover {
+  transform: scale(1.05);
+}
+
+.education-item h3 {
+  margin: 0.5rem 0;
+  color: var(--text-color);
+  font-size: 0.9em;
+}
+
+.education-item p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.8em;
+}
+
+/* Update hover effects with new colors */
+.nav-link:hover,
+.social-link:hover {
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Add subtle animation for links */
+@keyframes neonPulse {
+  0% { text-shadow: 0 0 5px var(--accent-color); }
+  50% { text-shadow: 0 0 15px var(--accent-color); }
+  100% { text-shadow: 0 0 5px var(--accent-color); }
+}
+
+.nav-link:hover,
+.social-link:hover {
+  animation: neonPulse 1.5s infinite;
+}
+
+/* Add subtle neon glow to sections */
+section {
+  background: rgba(42, 45, 62, 0.7);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 0 20px rgba(76, 212, 255, 0.2);
+}
+
+/* Update gallery items with new color scheme */
+.gallery-item {
+  background: rgba(42, 45, 62, 0.8);
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(76, 212, 255, 0.3);
+}
+
+/* Animations */
+@keyframes softGlow {
+  0% { box-shadow: 0 0 5px rgba(135, 206, 235, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(135, 206, 235, 0.4); }
+  100% { box-shadow: 0 0 5px rgba(135, 206, 235, 0.2); }
+}
+
+.tm-section:hover {
+  animation: softGlow 2s infinite;
+} 
