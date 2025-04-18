@@ -27,42 +27,65 @@
             <p>Bilingual in English and Mandarin.</p>
           </section>
 
+          <!-- Build Section -->
+          <section class="tm-section">
+            <h2 class="tm-section-title">Build?</h2>
+            <div class="carousel-container build-carousel">
+              <div class="carousel-slide">
+                <a href="https://github.com/limjiaxiang/doggo-cv-chatbot" class="career-link" target="_blank">
+                  <div class="image-container">
+                    <img src="img/build/doggo.png" alt="Doggo CV Chatbot">
+                  </div>
+                  <div class="carousel-caption">Doggo CV Chatbot</div>
+                </a>
+              </div>
+              <div class="carousel-slide">
+                <a href="https://t.me/+juKz_RYZ2z9lNjg1" class="career-link" target="_blank">
+                  <div class="image-container">
+                    <img src="img/build/bto.png" alt="Public Housing Webscraper Bot">
+                  </div>
+                  <div class="carousel-caption">Public Housing Webscraper Bot</div>
+                </a>
+              </div>
+            </div>
+          </section>
+
           <!-- Career Section -->
           <section class="tm-section">
             <h2 class="tm-section-title">Where?</h2>
-            <div class="carousel-container">
+            <div class="carousel-container where-carousel">
               <div class="carousel-slide">
-                <a href="#" class="career-link">
+                <a href="#" class="career-link" target="_blank">
                   <img src="img/gallery/goto.png" alt="GoTo">
                   <div class="carousel-caption">GoTo</div>
                 </a>
               </div>
               <div class="carousel-slide">
-                <a href="#" class="career-link">
+                <a href="#" class="career-link" target="_blank">
                   <img src="img/gallery/qb.png" alt="QuantumBlack">
                   <div class="carousel-caption">QuantumBlack</div>
                 </a>
               </div>
               <div class="carousel-slide">
-                <a href="#" class="career-link">
+                <a href="#" class="career-link" target="_blank">
                   <img src="img/gallery/visenze.png" alt="ViSenze">
                   <div class="carousel-caption">ViSenze</div>
                 </a>
               </div>
               <div class="carousel-slide">
-                <a href="#" class="career-link">
+                <a href="#" class="career-link" target="_blank">
                   <img src="img/gallery/shopee.png" alt="Shopee">
                   <div class="carousel-caption">Shopee</div>
                 </a>
               </div>
               <div class="carousel-slide">
-                <a href="#" class="career-link">
+                <a href="#" class="career-link" target="_blank">
                   <img src="img/gallery/weiss.png" alt="WeissBeerger">
                   <div class="carousel-caption">WeissBeerger</div>
                 </a>
               </div>
               <div class="carousel-slide">
-                <a href="#" class="career-link">
+                <a href="#" class="career-link" target="_blank">
                   <img src="img/gallery/foodpanda.png" alt="foodpanda">
                   <div class="carousel-caption">foodpanda</div>
                 </a>
@@ -96,14 +119,14 @@
           <section class="tm-section">
             <h2 class="tm-section-title">Reach?</h2>
             <div class="tm-social-links">
+              <button onclick="copyEmail()" class="nav-link">
+                <i class="fas fa-envelope"></i> Email [Click Here!]
+              </button>
               <a href="https://github.com/limjiaxiang" class="nav-link" target="_blank">
                 <i class="fab fa-github"></i> GitHub
               </a>
               <a href="https://linkedin.com/in/limjiaxiang" class="nav-link" target="_blank">
                 <i class="fab fa-linkedin"></i> LinkedIn
-              </a>
-              <a href="mailto:blakelimjiaxiang@gmail.com" class="nav-link">
-                <i class="fas fa-envelope"></i> blakelimjiaxiang@gmail.com
               </a>
             </div>
           </section>
@@ -111,6 +134,36 @@
       </div>
     </div>
 
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="toast-notification">
+      <i class="fas fa-check"></i>
+      <span>Email copied to clipboard!</span>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function copyEmail() {
+        const email = 'blakelimjiaxiang@gmail.com';
+        navigator.clipboard.writeText(email).then(() => {
+          // Show toast notification
+          const toast = document.getElementById('toastNotification');
+          toast.classList.add('show');
+          
+          // Hide toast after 2 seconds
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 2000);
+        }).catch(() => {
+          // Handle error case
+          const toast = document.getElementById('toastNotification');
+          toast.innerHTML = '<i class="fas fa-exclamation-triangle"></i><span>Failed to copy email</span>';
+          toast.classList.add('show');
+          
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 2000);
+        });
+      }
+    </script>
   </body>
 </html>
