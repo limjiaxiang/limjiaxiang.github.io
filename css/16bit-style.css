@@ -11,6 +11,18 @@
   --border-color: #87CEEB;     /* Sky blue */
   --section-bg: rgba(255, 255, 255, 0.85);
   --city-pop-gradient: linear-gradient(45deg, #FF8FB1, #87CEEB);
+  
+  /* Responsive spacing units */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Responsive font sizes */
+  --font-size-sm: 0.8rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
 }
 
 body {
@@ -28,13 +40,16 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Retro container */
 .container-fluid {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: var(--spacing-md);
+  width: 100%;
 }
 
 /* Retro navigation */
@@ -71,8 +86,8 @@ body {
 /* Retro sections */
 .tm-section {
   border: 3px solid var(--border-color);
-  margin: 20px 0;
-  padding: 20px;
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
   position: relative;
   background-color: var(--section-bg);
   box-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
@@ -98,8 +113,8 @@ body {
     2px 2px 0 var(--secondary-color),
     4px 4px 0 rgba(0, 0, 0, 0.2);
   letter-spacing: 4px;
-  font-size: 2em;
-  margin: 0 0 15px 0;
+  font-size: var(--font-size-xl);
+  margin: 0 0 var(--spacing-lg) 0;
   padding: 10px 0;
   position: relative;
 }
@@ -169,7 +184,7 @@ button {
 .tm-social-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: var(--spacing-md);
   justify-content: flex-start;
 }
 
@@ -178,7 +193,7 @@ button {
   color: var(--text-color);
   border: 2px solid var(--border-color);
   border-radius: 8px;
-  padding: 15px 25px;
+  padding: var(--spacing-md);
   transition: all 0.3s ease;
   cursor: pointer;
   font-family: 'Press Start 2P', cursive;
@@ -187,7 +202,8 @@ button {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  min-width: 200px;
+  min-width: auto;
+  width: 100%;
   box-shadow: 0 4px 6px rgba(135, 206, 235, 0.1);
   white-space: nowrap;
   -webkit-appearance: none;
@@ -290,7 +306,7 @@ button {
   }
   
   .tm-section {
-    padding: 10px;
+    padding: var(--spacing-md);
   }
 }
 
@@ -306,7 +322,7 @@ button {
   position: relative;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 20px 0;
+  padding: var(--spacing-md) 0;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   display: flex;
@@ -369,8 +385,8 @@ button {
 /* Common carousel styles */
 .carousel-slide {
   flex: 0 0 auto;
-  width: 250px;
-  height: 250px;
+  width: 280px;
+  height: 280px;
   scroll-snap-align: center;
   text-align: center;
   transition: all 0.3s ease;
@@ -378,7 +394,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 15px;
+  padding: var(--spacing-md);
   background-color: #FFFFFF;
   border-radius: 8px;
   border: 2px solid var(--border-color);
@@ -406,8 +422,8 @@ button {
 }
 
 .carousel-slide img {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   object-fit: contain;
   border-radius: 8px;
   padding: 10px;
@@ -513,9 +529,9 @@ button {
 /* Education section */
 .education-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
 }
 
 .education-item {
@@ -523,7 +539,7 @@ button {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 1.5rem;
+  padding: var(--spacing-md);
   background: var(--background-color);
   border-radius: 8px;
   border: 2px solid var(--border-color);
@@ -537,8 +553,8 @@ button {
 }
 
 .education-item img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   margin-bottom: 1rem;
   border-radius: 4px;
@@ -560,7 +576,7 @@ button {
 .education-item h3 {
   margin: 0.5rem 0;
   color: var(--text-color);
-  font-size: 0.9em;
+  font-size: var(--font-size-sm);
 }
 
 .education-item p {
@@ -660,4 +676,151 @@ section {
 
 .toast-notification i {
   color: var(--accent-color);
+}
+
+/* Media Queries */
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+  :root {
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+    --font-size-xl: 1.25rem;
+  }
+  
+  .tm-section {
+    padding: var(--spacing-md);
+  }
+  
+  .tm-section-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .carousel-slide {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .carousel-slide img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .education-item {
+    padding: var(--spacing-md);
+  }
+  
+  .education-item img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .tm-social-links {
+    flex-direction: column;
+  }
+  
+  .tm-social-links .nav-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Tablet devices */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --spacing-lg: 1.5rem;
+    --font-size-xl: 1.35rem;
+  }
+  
+  .carousel-slide {
+    width: 260px;
+    height: 260px;
+  }
+  
+  .carousel-slide img {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .education-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+/* Laptop and larger screens */
+@media screen and (min-width: 769px) {
+  .container-fluid {
+    padding: var(--spacing-xl);
+  }
+  
+  .tm-section {
+    padding: var(--spacing-xl);
+  }
+  
+  .carousel-container {
+    padding: var(--spacing-lg) 0;
+  }
+}
+
+/* High-DPI screens */
+@media screen and (min-width: 1200px) {
+  :root {
+    --font-size-xl: 1.75rem;
+  }
+  
+  .container-fluid {
+    max-width: 1400px;
+  }
+}
+
+/* Ensure text remains readable on small screens */
+@media screen and (max-width: 320px) {
+  :root {
+    --font-size-base: 0.9rem;
+    --font-size-lg: 1.1rem;
+  }
+  
+  .carousel-slide {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .education-item h3 {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Prevent horizontal overflow */
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .carousel-container {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .carousel-slide {
+    scroll-snap-align: center;
+  }
+  
+  .tm-social-links .nav-link:hover {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: none;
+  }
+  
+  .tm-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #000;
+  }
 } 
