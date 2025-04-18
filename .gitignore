@@ -80,3 +80,5 @@ instance/
 htmlcov/
 
 *.egg-info/
+
+.cursorrules
