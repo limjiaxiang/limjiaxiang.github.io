@@ -530,6 +530,19 @@ button {
   font-size: 0.8em;
 }
 
+.education-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.education-item a:hover {
+  color: var(--accent-color);
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
 /* Update hover effects with new colors */
 .nav-link:hover,
 .social-link:hover {
