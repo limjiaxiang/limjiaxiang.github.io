@@ -53,42 +53,44 @@
           <!-- Career Section -->
           <section class="tm-section">
             <h2 class="tm-section-title">Where?</h2>
-            <div class="carousel-container where-carousel">
-              <div class="carousel-slide">
-                <a href="https://www.gotocompany.com/en/about-us" class="career-link" target="_blank">
-                  <img src="img/gallery/goto.png" alt="GoTo">
-                  <div class="carousel-caption">GoTo</div>
-                </a>
-              </div>
-              <div class="carousel-slide">
-                <a href="https://www.mckinsey.com/capabilities/quantumblack/how-we-help-clients" class="career-link" target="_blank">
-                  <img src="img/gallery/qb.png" alt="QuantumBlack">
-                  <div class="carousel-caption">QuantumBlack</div>
-                </a>
-              </div>
-              <div class="carousel-slide">
-                <a href="https://www.visenze.com" class="career-link" target="_blank">
-                  <img src="img/gallery/visenze.png" alt="ViSenze">
-                  <div class="carousel-caption">ViSenze</div>
-                </a>
-              </div>
-              <div class="carousel-slide">
-                <a href="https://shopee.sg" class="career-link" target="_blank">
-                  <img src="img/gallery/shopee.png" alt="Shopee">
-                  <div class="carousel-caption">Shopee</div>
-                </a>
-              </div>
-              <div class="carousel-slide">
-                <a href="https://www.crunchbase.com/organization/weissbeerger" class="career-link" target="_blank">
-                  <img src="img/gallery/weiss.png" alt="WeissBeerger">
-                  <div class="carousel-caption">WeissBeerger</div>
-                </a>
-              </div>
-              <div class="carousel-slide">
-                <a href="https://www.foodpanda.com/" class="career-link" target="_blank">
-                  <img src="img/gallery/foodpanda.png" alt="foodpanda">
-                  <div class="carousel-caption">foodpanda</div>
-                </a>
+            <div class="carousel-wrapper">
+              <div class="carousel-container where-carousel">
+                <div class="carousel-slide">
+                  <a href="https://www.gotocompany.com/en/about-us" class="career-link" target="_blank">
+                    <img src="img/gallery/goto.png" alt="GoTo">
+                    <div class="carousel-caption">GoTo</div>
+                  </a>
+                </div>
+                <div class="carousel-slide">
+                  <a href="https://www.mckinsey.com/capabilities/quantumblack/how-we-help-clients" class="career-link" target="_blank">
+                    <img src="img/gallery/qb.png" alt="QuantumBlack">
+                    <div class="carousel-caption">QuantumBlack</div>
+                  </a>
+                </div>
+                <div class="carousel-slide">
+                  <a href="https://www.visenze.com" class="career-link" target="_blank">
+                    <img src="img/gallery/visenze.png" alt="ViSenze">
+                    <div class="carousel-caption">ViSenze</div>
+                  </a>
+                </div>
+                <div class="carousel-slide">
+                  <a href="https://shopee.sg" class="career-link" target="_blank">
+                    <img src="img/gallery/shopee.png" alt="Shopee">
+                    <div class="carousel-caption">Shopee</div>
+                  </a>
+                </div>
+                <div class="carousel-slide">
+                  <a href="https://www.crunchbase.com/organization/weissbeerger" class="career-link" target="_blank">
+                    <img src="img/gallery/weiss.png" alt="WeissBeerger">
+                    <div class="carousel-caption">WeissBeerger</div>
+                  </a>
+                </div>
+                <div class="carousel-slide">
+                  <a href="https://www.foodpanda.com/" class="career-link" target="_blank">
+                    <img src="img/gallery/foodpanda.png" alt="foodpanda">
+                    <div class="carousel-caption">foodpanda</div>
+                  </a>
+                </div>
               </div>
             </div>
           </section>
@@ -170,6 +172,26 @@
           }, 2000);
         });
       }
+
+      // Handle scroll indicator visibility
+      function updateScrollIndicators() {
+        document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+          const container = wrapper.querySelector('.carousel-container');
+          const hasMoreContent = container.scrollWidth > container.clientWidth &&
+            container.scrollLeft < (container.scrollWidth - container.clientWidth);
+          wrapper.classList.toggle('has-more', hasMoreContent);
+        });
+      }
+
+      // Update indicators on load and scroll
+      document.addEventListener('DOMContentLoaded', () => {
+        updateScrollIndicators();
+        document.querySelectorAll('.carousel-container').forEach(container => {
+          container.addEventListener('scroll', updateScrollIndicators);
+        });
+        // Update on window resize
+        window.addEventListener('resize', updateScrollIndicators);
+      });
     </script>
   </body>
 </html>

@@ -294,6 +294,13 @@ button {
   }
 }
 
+/* Carousel container wrapper */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  padding-right: 40px; /* Space for arrow */
+}
+
 /* Carousel styles */
 .carousel-container {
   position: relative;
@@ -306,7 +313,39 @@ button {
   gap: 30px;
   scroll-behavior: smooth;
   width: 100%;
-  min-height: 300px;  /* Ensure container fits taller slides */
+  min-height: 300px;
+}
+
+/* Scroll indicator arrow */
+.carousel-wrapper::after {
+  content: '→';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Press Start 2P', cursive;
+  color: var(--accent-color);
+  font-size: 1.5em;
+  text-shadow: 0 0 10px var(--accent-color);
+  animation: arrowPulse 2s infinite;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  background: linear-gradient(to right, transparent, var(--section-bg) 50%);
+  padding: 20px 10px 20px 40px;
+  z-index: 3;
+}
+
+.carousel-wrapper.has-more::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes arrowPulse {
+  0% { opacity: 0.5; transform: translate(0, -50%); }
+  50% { opacity: 1; transform: translate(5px, -50%); }
+  100% { opacity: 0.5; transform: translate(0, -50%); }
 }
 
 /* Build section specific styles */
