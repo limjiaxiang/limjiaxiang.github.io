@@ -246,12 +246,10 @@ button:hover {
   align-items: center;
   justify-content: space-between;
   padding: 15px 10px;
-  background: var(--background-color);
+  background-color: #FFFFFF;
   border-radius: 8px;
   border: 2px solid var(--border-color);
-  margin: 5px;
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(135, 206, 235, 0.1);
 }
 
 .carousel-slide img {
@@ -260,18 +258,14 @@ button:hover {
   object-fit: contain;
   border-radius: 8px;
   padding: 10px;
-  background: var(--background-color);
-  box-shadow: 0 4px 15px rgba(135, 206, 235, 0.2);
+  background-color: #FFFFFF;
   margin: 0;
 }
 
 .carousel-slide:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(135, 206, 235, 0.3);
-}
-
-.carousel-slide:hover img {
-  box-shadow: 0 8px 20px rgba(135, 206, 235, 0.3);
+  box-shadow: 0 8px 20px rgba(135, 206, 235, 0.2);
+  background-color: #FFFFFF;
 }
 
 .carousel-caption {
@@ -288,6 +282,7 @@ button:hover {
   bottom: 10px;
   left: 0;
   right: 0;
+  background-color: #FFFFFF;
 }
 
 /* Hide scrollbar but keep functionality */
